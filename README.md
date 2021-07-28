@@ -49,3 +49,25 @@ Quick Links:
 ## License
 
 This project is licensed under the permissive BSD 3-clause, see [LICENSE.md](LICENSE.md).
+
+## Installation from source
+Change directory to the MAVSDK folder
+
+### Prequisities
+```bash
+sudo apt-get update
+sudo apt-get install build-essential cmake git
+git submodule update --init --recursive
+```
+
+### Build
+```bash
+cmake -Bbuild/default -DCMAKE_BUILD_TYPE=Release -H.
+cmake --build build/default -j$(nproc)
+```
+
+### Install
+```bash
+sudo cmake --build build/default --target install
+```
+
